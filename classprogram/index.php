@@ -1,17 +1,10 @@
-<?php $activePage = 'classprogram'; ?>
+<?php $activePage = 'classprogram';
+$pageTitle = 'Ders Programı'; ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ders Programı</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <title>Bootstrap Example</title>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
+    <?php include __DIR__ . '/../head.php'; ?>
 </head>
 
 <body>
@@ -35,7 +28,7 @@
                         <td>#1</td>
                         <td><a href="https://ebs.iuc.edu.tr/home/izlence/?id=l%2bfCmVf1BQM%3d&bid=LItQcsKWwWc%3d"
                                 target="_blank" class="text-black">Web Tabanlı Programlama</a></td>
-                        <td>İrfan Şimşek</td>
+                        <td>Prof. Dr. İrfan Şimşek</td>
                         <td>Salı</td>
                         <td>13.45-16.45</td>
                     </tr>
@@ -43,7 +36,7 @@
                         <td>#2</td>
                         <td> <a href="https://ebs.iuc.edu.tr/home/izlence/?id=uNT0BSZFixo%3d&bid=LItQcsKWwWc%3d"
                                 target="_blank" class="text-black">Eğitimde Modelleme ve Tasarım</a></td>
-                        <td>Doğan Aydın</td>
+                        <td>Öğr. Gör. Dr. Doğan Aydın</td>
                         <td>Pazartesi</td>
                         <td>13.00-16.00</td>
                     </tr>
@@ -51,7 +44,7 @@
                         <td>#3</td>
                         <td><a href="https://ebs.iuc.edu.tr/home/izlence/?id=%2bYJbaGe0niw%3d&bid=LItQcsKWwWc%3d"
                                 target="_blank" class="text-black">Eğitimde Yapay Zeka Uygulamaları</a></td>
-                        <td>Özgür Yılmaz</td>
+                        <td>Doç. Dr. Özgür Yılmaz</td>
                         <td>Pazartesi</td>
                         <td>11.30-13.00</td>
                     </tr>
