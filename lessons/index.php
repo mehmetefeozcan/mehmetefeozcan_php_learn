@@ -18,13 +18,19 @@ $tableItems = getLessons();
     <?php include_once COMPONENTS_PATH . "/layout/header.php" ?>
 
     <div class="container p-4 bg-light mt-4 rounded-3">
-        <h3> <?php echo $pageTitle ?> </h3>
-        <div class="row justify-content-end mt-2 mb-4">
+
+
+        <div class="row justify-content-between">
+            <span class="col-auto">
+                <h3>
+                    <?php echo $pageTitle ?>
+                </h3>
+            </span>
             <div class="col-auto">
-                <a class="btn btn-primary" href="create.php" role="button">Yeni Ders Oluştur</a>
+                <a class="btn btn-primary btn-sm" href="create.php" role="button">Yeni Ders Oluştur</a>
             </div>
         </div>
-        <table class="table table-striped table-hover">
+        <table class="table table-striped table-hover mt-4">
             <thead>
                 <tr>
                     <th scope="col">#ID</th>

@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 if (!isset($_SESSION['lessons'])) {
     $_SESSION['lessons'] = [
@@ -39,6 +41,24 @@ if (!isset($_SESSION['lessons'])) {
     ];
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $ids = array_column($_SESSION['lessons'], 'id');
+
+    $_SESSION['lessons'][] = [
+        'id' => $ids ? max($ids) + 1 : 1,
+        'code' => trim($_POST['lessonCodeInput'] ?? ''),
+        'title' => trim($_POST['lessonNameInput'] ?? ''),
+        'link' => trim($_POST['lessonDetailLinkInput'] ?? ''),
+        'academicStaff' => trim($_POST['lessonStaffInput'] ?? ''),
+        'classDay' => trim($_POST['classDayInput'] ?? ''),
+        'classTime' => trim($_POST['classStartTimeInput'] ?? ''),
+        'detail' => trim($_POST['lessonDetailInput'] ?? ''),
+        'credit' => (int) ($_POST['lessonCreditInput'] ?? 0),
+    ];
+
+    header("Location: index.php");
+    exit;
+}
 
 function getLessons(): array
 {
