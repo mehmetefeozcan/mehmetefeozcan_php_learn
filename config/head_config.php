@@ -8,3 +8,4 @@ $pageTitle ??= "";
 <title><?= htmlspecialchars(!empty($pageTitle) ? $pageTitle . " | BÖTE - HAYEF" : "BÖTE - HAYEF") ?> </title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="<?= PUBLIC_CSS_URL . "/main.css" ?>">
