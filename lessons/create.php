@@ -69,21 +69,23 @@ $durationList = [
         <form action="store.php" method="POST">
             <div class="mt-4">
                 <label for="lessonCodeInput" class="form-label">Ders Kodu</label>
-                <input type="text" class="form-control" id="lessonCodeInput" placeholder="Ders kodu giriniz" required>
+                <input type="text" class="form-control" id="lessonCodeInput" name="lessonCode"
+                    placeholder="Ders kodu giriniz" required>
             </div>
             <div class="mt-4">
                 <label for="lessonNameInput" class="form-label">Ders Adı</label>
-                <input type="text" class="form-control" id="lessonNameInput" placeholder="Ders adı giriniz" required>
+                <input type="text" class="form-control" id="lessonNameInput" name="lessonName"
+                    placeholder="Ders adı giriniz" required>
             </div>
             <div class="mt-4">
                 <label for="lessonCreditInput" class="form-label">Ders Kredisi</label>
-                <input type="number" class="form-control" id="lessonCreditInput" placeholder="Ders kredisi giriniz"
-                    required>
+                <input type="number" class="form-control" id="lessonCreditInput" name="lessonCredit"
+                    placeholder="Ders kredisi giriniz" required>
             </div>
             <div class="mt-4">
                 <label for="lessonStaffInput" class="form-label">Öğretim Üyesi</label>
                 <select class="form-select" aria-label="Öğretim üyesi seçiniz" id="lessonStaffInput"
-                    class="form-control" required>
+                    name="lessonStaff" required>
                     <option selected disabled>Öğretim üyesi seçiniz</option>
                     <?php foreach ($academicStaffList as $staff): ?>
                         <option value="<?= $staff['name'] ?>">
@@ -96,8 +98,8 @@ $durationList = [
             <div class="mt-4 row gap-2">
                 <span class="col-auto">
                     <label for="classDayInput" class="form-label">Ders Günü</label>
-                    <select class="form-select" aria-label="Ders günü seçiniz" id="classDayInput" class="form-control"
-                        required>
+                    <select class="form-select" aria-label="Ders günü seçiniz" id="classDayInput"
+                        name="classDay" required>
                         <option selected disabled>Ders günü seçiniz</option>
                         <?php foreach ($dayList as $day): ?>
                             <option value="<?= $day['name'] ?>">
@@ -109,7 +111,7 @@ $durationList = [
                 <span class="col-auto">
                     <label for="classStartTimeInput" class="form-label">Dersin Başlangıç Saati</label>
                     <select class="form-select" aria-label="Dersin başlangıç saatini seçiniz" id="classStartTimeInput"
-                        class="form-control" required>
+                        name="classStartTime" required>
                         <option selected disabled>Saat seçiniz</option>
                         <?php foreach ($timeList as $time): ?>
                             <option value="<?= $time ?>">
@@ -122,7 +124,7 @@ $durationList = [
                 <span class="col-auto">
                     <label for="classDurationInput" class="form-label">Ders Süresi</label>
                     <select class="form-select" aria-label="Ders süresi seçiniz" id="classDurationInput"
-                        class="form-control" required>
+                        name="classDuration" required>
                         <option selected disabled>Saat seçiniz</option>
                         <?php foreach ($durationList as $duration): ?>
                             <option value="<?= $duration ?>">
@@ -133,14 +135,15 @@ $durationList = [
                 </span>
                 <span class="col">
                     <label for="lessonDetailLinkInput" class="form-label">EBS Linki</label>
-                    <input type="text" class="form-control" id="lessonDetailLinkInput" placeholder="Link giriniz">
+                    <input type="text" class="form-control" id="lessonDetailLinkInput" name="lessonDetailLink"
+                        placeholder="Link giriniz">
                 </span>
             </div>
 
             <div class="mt-4">
                 <label for="lessonDetailInput" class="form-label">Ders Detayları</label>
-                <textarea class="form-control" id="lessonDetailInput" placeholder="Ders detayları giriniz"
-                    class="form-control" rows="5"></textarea>
+                <textarea class="form-control" id="lessonDetailInput" name="lessonDetail"
+                    placeholder="Ders detayları giriniz" rows="5"></textarea>
             </div>
             <div class="row justify-content-end mt-4">
                 <div class="col-auto">

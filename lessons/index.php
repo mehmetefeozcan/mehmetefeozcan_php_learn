@@ -46,15 +46,16 @@ $tableItems = getLessons();
             <tbody>
                 <?php foreach ($tableItems as $item): ?>
                     <tr>
-                        <td scope="row" class="align-middle text-start">#<?= $item['id'] ?> </td>
-                        <td scope="row" class="align-middle text-start"><?= $item['code'] ?> </td>
-                        <td scope="row" class="align-middle text-start"><?= $item['title'] ?> </td>
-                        <td scope="row" class="align-middle text-start"><?= $item['academicStaff'] ?> </td>
-                        <td scope="row" class="align-middle text-start"><?= $item['credit'] ?> </td>
-                        <td scope="row" class="align-middle text-start"><?= $item['classDay'] ?> </td>
-                        <td scope="row" class="align-middle text-start"><?= $item['classTime'] ?> </td>
-                        <td scope="row" class="align-middle text-start">
-                            <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
+                        <td scope="row" class="align-middle text-start">#<?= htmlspecialchars($item['id']) ?> </td>
+                        <td scope="row" class="align-middle text-start"><?= htmlspecialchars($item['code']) ?> </td>
+                        <td scope="row" class="align-middle text-start"><?= htmlspecialchars($item['title']) ?> </td>
+                        <td scope="row" class="align-middle text-start"><?= htmlspecialchars($item['academicStaff']) ?>
+                        </td>
+                        <td scope="row" class="align-middle text-start"><?= htmlspecialchars($item['credit']) ?> </td>
+                        <td scope="row" class="align-middle text-start"><?= htmlspecialchars($item['classDay']) ?> </td>
+                        <td scope="row" class="align-middle text-start"><?= htmlspecialchars($item['classTime']) ?> </td>
+                        <td scope="row" class="align-middle text-start row gap-2">
+                            <button type="button" class="btn btn-secondary btn-sm col" data-bs-toggle="modal"
                                 data-bs-target="#lessonInfoModal" data-bs-title="<?= htmlspecialchars($item['title']) ?>"
                                 data-bs-staff="<?= htmlspecialchars($item['academicStaff']) ?>"
                                 data-bs-day="<?= htmlspecialchars($item['classDay']) ?>"
@@ -62,6 +63,13 @@ $tableItems = getLessons();
                                 data-bs-detail="<?= htmlspecialchars($item['detail']) ?>">
                                 Detaylar
                             </button>
+
+                            <form action="store.php" method="POST" class="col p-0"
+                                onsubmit="return confirm('Bu dersi silmek istediğinize emin misiniz?');">
+                                <input type="hidden" name="action" value="delete">
+                                <input type="hidden" name="id" value="<?= htmlspecialchars($item['id']) ?>">
+                                <button type="submit" class="btn btn-danger btn-sm w-100">sil</button>
+                            </form>
                         </td>
                     </tr>
                 <?php endforeach ?>

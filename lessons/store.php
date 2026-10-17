@@ -41,19 +41,26 @@ if (!isset($_SESSION['lessons'])) {
     ];
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'delete') {
+    deleteLesson((int) $_POST['id']);
+
+    header("Location: index.php");
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ids = array_column($_SESSION['lessons'], 'id');
 
     $_SESSION['lessons'][] = [
         'id' => $ids ? max($ids) + 1 : 1,
-        'code' => trim($_POST['lessonCodeInput'] ?? ''),
-        'title' => trim($_POST['lessonNameInput'] ?? ''),
-        'link' => trim($_POST['lessonDetailLinkInput'] ?? ''),
-        'academicStaff' => trim($_POST['lessonStaffInput'] ?? ''),
-        'classDay' => trim($_POST['classDayInput'] ?? ''),
-        'classTime' => trim($_POST['classStartTimeInput'] ?? ''),
-        'detail' => trim($_POST['lessonDetailInput'] ?? ''),
-        'credit' => (int) ($_POST['lessonCreditInput'] ?? 0),
+        'code' => trim($_POST['lessonCode'] ?? ''),
+        'title' => trim($_POST['lessonName'] ?? ''),
+        'link' => trim($_POST['lessonDetailLink'] ?? ''),
+        'academicStaff' => trim($_POST['lessonStaff'] ?? ''),
+        'classDay' => trim($_POST['classDay'] ?? ''),
+        'classTime' => trim($_POST['classStartTime'] ?? ''),
+        'detail' => trim($_POST['lessonDetail'] ?? ''),
+        'credit' => (int) ($_POST['lessonCredit'] ?? 0),
     ];
 
     header("Location: index.php");
@@ -63,5 +70,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 function getLessons(): array
 {
     return $_SESSION['lessons'] ?? [];
+}
+
+function deleteLesson(int $id): void
+{
+    $_SESSION['lessons'] = array_values(array_filter(
+        $_SESSION['lessons'],
+        fn($lesson) => $lesson['id'] !== $id
+    ));
 }
 ?>
