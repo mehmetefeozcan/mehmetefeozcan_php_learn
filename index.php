@@ -1,28 +1,20 @@
 <?php
-require_once 'config.php';
-
-$pageTitle = "Ana Sayfa | BÖTE";
-$path = __DIR__ . "";
+$pageTitle = "Hoşgeldiniz";
+$pagePath = "/index.php";
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $pageTitle ?></title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/public/css/header.css" rel="stylesheet">
-
-
+    <?php include_once "./config/head_config.php" ?>
 </head>
 
 <body>
-    <?php include_once $path . "/components/header.php" ?>
-</body>
+    <?php include_once COMPONENTS_PATH . "/layout/header.php" ?>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="container"></div>
+</body>
+<?php include_once "./config/script_config.php" ?>
 
 </html>
