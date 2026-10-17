@@ -1,12 +1,10 @@
 <?php
+require_once __DIR__ . "/store.php";
+
 $pageTitle = "Dersler";
 $pagePath = "/lessons/index.php";
 
-$tableItems = [
-    ["id" => 1, "title" => "Web Tabanlı Programlama", "link" => "#", "academicStaff" => "Prof. Dr. İrfan Şimşek", "classDay" => "Salı", "classTime" => "13.45-16.45", "detail" => "Internet üzerinde kullanılan programlama dilleri, Internet programlama istemci sunucu mimariye giriş, Web sunucusu kurulumu, programlama diline ayarları, Internet programlama için kullanılan editörler ve program geliştirme ortamları, Programlamaya giriş, değişkenler, sabitler, diziler, programlamda kullanılan fonksiyonlar, (karakter, sayısal, mantıksal, tarih vb.), program akış kontrol deyimleri (if, switch, case vb.) ve kullanımı, program döngü deyimleri ve kullanımı (dowhile, for, loop vb.), sunucu ve ortam değişkenleri ve kullanımı, internet programlamada çerez kavramı ve kullanım alanları, internet üzerinden HTTP istek ve cevaplarının gönderilmesi, internet üzerinden veritabanına bağlanmak ve işlemler gerçekleştirmek, veri tabanında bulunan bilgilerin listelenmesi, sıralanması, değiştirilmesi, eğitim amaçlı dinamik bir internet uygulamasının geliştirilmesi."],
-    ["id" => 2, "title" => "Eğitimde Modelleme ve Tasarım", "link" => "#", "academicStaff" => "Öğr. Gör. Dr. Doğan Aydın", "classDay" => "Pazartesi", "classTime" => "13.00-16.00", "detail" => "Üç boyutlu modelleme ve animasyon teknikleri ve yöntemleri. Vektör sistemi içinde üçüncü boyut. Doku, ışık, kamera ve hareket."],
-    ["id" => 3, "title" => "Eğitimde Yapay Zeka Uygulamaları", "link" => "#", "academicStaff" => "Doç. Dr. Özgür Yılmaz", "classDay" => "Pazartesi", "classTime" => "11.30-13.00", "detail" => "Zekâ ve özellikleri; yapay zekânın tarihçesi, güncel durumu ve uygulama alanları; uzman sistemler; uzman sistemlerin kullanım alanları, bileşenleri, özellikleri, tasarımı; uzman sistemlerin eğitimde kullanımı; zeki öğrenme sistemleri; eğitimde büyük veri; öğrenme analitikleri; eğitsel ajan; uyarlanabilir öğrenme ve uyarlanabilir ölçme; mantıksal programlamada program geliştirme."]
-];
+$tableItems = getLessons();
 ?>
 
 <!DOCTYPE html>
@@ -23,15 +21,17 @@ $tableItems = [
         <h3> <?php echo $pageTitle ?> </h3>
         <div class="row justify-content-end mt-2 mb-4">
             <div class="col-auto">
-                <a class="btn btn-primary" href="#" role="button">Ekle</a>
+                <a class="btn btn-primary" href="create.php" role="button">Yeni Ders Oluştur</a>
             </div>
         </div>
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
                     <th scope="col">#ID</th>
+                    <th scope="col">Kod</th>
                     <th scope="col">Ders Adı</th>
                     <th scope="col">Dersi Veren</th>
+                    <th scope="col">Kredi</th>
                     <th scope="col">Ders Günü</th>
                     <th scope="col">Ders Saati</th>
                     <th scope="col"></th>
@@ -41,8 +41,10 @@ $tableItems = [
                 <?php foreach ($tableItems as $item): ?>
                     <tr>
                         <td scope="row" class="align-middle text-start">#<?= $item['id'] ?> </td>
+                        <td scope="row" class="align-middle text-start"><?= $item['code'] ?> </td>
                         <td scope="row" class="align-middle text-start"><?= $item['title'] ?> </td>
                         <td scope="row" class="align-middle text-start"><?= $item['academicStaff'] ?> </td>
+                        <td scope="row" class="align-middle text-start"><?= $item['credit'] ?> </td>
                         <td scope="row" class="align-middle text-start"><?= $item['classDay'] ?> </td>
                         <td scope="row" class="align-middle text-start"><?= $item['classTime'] ?> </td>
                         <td scope="row" class="align-middle text-start">

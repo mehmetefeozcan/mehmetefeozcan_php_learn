@@ -13,7 +13,7 @@
                 <p class="text-muted" id="modalDetail"></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Kapat</button>
             </div>
         </div>
     </div>
