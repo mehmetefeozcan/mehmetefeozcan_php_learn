@@ -1,9 +1,0 @@
-.login-btn {
-  width: 100%;
-}
-
-@media (min-width: 992px) {
-  .login-btn {
-    width: 120px;
-  }
-}
