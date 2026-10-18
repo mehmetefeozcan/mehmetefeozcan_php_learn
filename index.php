@@ -34,7 +34,7 @@ $pagePath = "/index.php";
             <p>Sınavları görüntülemek ve yönetmek için <a href="<?= BASE_URL ?>/exam/index.php">tıklayınız.</a></p>
         </div>
     </div>
-</body>
 <?php include_once "./config/script_config.php" ?>
+</body>
 
 </html>

@@ -71,7 +71,7 @@ $tableItems = getExams();
             </tbody>
         </table>
     </div>
-</body>
 <?php include_once '../config/script_config.php' ?>
+</body>
 
 </html>

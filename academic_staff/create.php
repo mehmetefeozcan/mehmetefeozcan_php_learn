@@ -58,7 +58,7 @@ $pagePath = "/academic_staff/index.php";
             </div>
         </form>
     </div>
-</body>
 <?php include_once "../config/script_config.php" ?>
+</body>
 
 </html>

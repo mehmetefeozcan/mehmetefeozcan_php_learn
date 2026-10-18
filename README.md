@@ -91,8 +91,8 @@ $pagePath = "/index.php";     // Menüde hangi linkin "aktif" görüneceğini be
         <h1>Hoşgeldiniz</h1>
         ...
     </div>
-</body>
 <?php include_once "./config/script_config.php" ?>
+</body>
 
 </html>
 ```
@@ -467,10 +467,6 @@ Bunlar güncel kodda bulunan ve bilinçli olarak henüz düzeltilmeyen konulard�
 ### 9.1 Yetkilendirme yok
 
 Giriş sistemi henüz yoktur. Sayfayı açabilen herkes kayıt ekleyip silebilir. Menüdeki "Giriş yap" butonu şu an yalnızca görsel amaçlıdır.
-
-### 9.2 Script yerleşimi
-
-Sayfaların çoğunda `script_config.php`, `</html>` etiketinden **sonra** çağrılıyor. Yeni sayfalarda `</body>`'den hemen önce çağırmanızı öneririz.
 
 ---
 

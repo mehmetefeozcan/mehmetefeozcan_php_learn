@@ -83,9 +83,7 @@ $tableItems = getLessons();
 
     <?php include_once COMPONENTS_PATH . "/modal/lesson_info_modal.php" ?>
 
-</body>
 <?php include_once "../config/script_config.php" ?>
-
 <script>
     var infoModal = document.getElementById('lessonInfoModal');
     infoModal.addEventListener('show.bs.modal', function (event) {
@@ -109,5 +107,6 @@ $tableItems = getLessons();
 
     });
 </script>
+</body>
 
 </html>
