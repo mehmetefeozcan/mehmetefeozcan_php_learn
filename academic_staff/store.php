@@ -3,17 +3,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-if (!isset($_SESSION["academicStaffs"])) {
-    $_SESSION["academicStaffs"] = [
-        [
-            "id" => 1,
-            "registirationNo" => "0001",
-            "name" => "a",
-            "surname" => "a",
-            "email" => "a@a.com",
-        ]
-    ];
-}
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'delete') {
     deleteAcademicStaff((int) $_POST['id']);
@@ -23,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'delet
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $ids = array_column($_SESSION['academicStaffs'], 'id');
+    $ids = $ids ? array_column($_SESSION['academicStaffs'], 'id') : [];
 
     $_SESSION['academicStaffs'][] = [
         "id" => $ids ? max($ids) + 1 : 1,

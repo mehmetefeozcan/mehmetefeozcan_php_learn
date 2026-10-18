@@ -11,7 +11,7 @@ if (!isset($_SESSION["students"])) {
                 "schoolNo" => "0001",
                 "name" => "Mehmet Efe",
                 "surname" => "Özcan",
-                "departmant" => "BÖTE",
+                "departmant" => "Bilgisayar ve Öğretim Teknolohileri Öğretmenliği",
                 "phone" => "05519414940",
                 "email" => "ozcanmehmetefe@gmail.com",
             ]
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'delet
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $ids = array_column($_SESSION['students'], 'id');
+    $ids = $ids ? array_column($_SESSION['students'], 'id') : [];
 
     error_log($_POST['departmant']);
     error_log($_POST['phone']);
