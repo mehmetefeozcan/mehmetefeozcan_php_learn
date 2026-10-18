@@ -48,7 +48,7 @@ function deleteAcademicStaff(int $id): void
 {
     $_SESSION['academicStaffs'] = array_values(array_filter(
         $_SESSION['academicStaffs'],
-        fn($lesson) => $lesson['id'] !== $id
+        fn($i) => $i['id'] !== $id
     ));
 }
 ?>

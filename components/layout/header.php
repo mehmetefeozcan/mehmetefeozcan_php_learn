@@ -20,11 +20,11 @@ $pagePath ??= "";
         </button>
         <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
-                <?php foreach ($menuList as $item): ?>
+                <?php foreach ($menuList as $i): ?>
                     <li class="nav-item ">
-                        <a class="nav-link <?= $pagePath == $item['route'] ? 'active' : '' ?>"
-                            href="<?= BASE_URL . $item['route']; ?>">
-                            <?= $item['name']; ?>
+                        <a class="nav-link <?= $pagePath == $i['route'] ? 'active' : '' ?>"
+                            href="<?= BASE_URL . $i['route']; ?>">
+                            <?= $i['name']; ?>
                         </a>
                     </li>
                 <?php endforeach; ?>

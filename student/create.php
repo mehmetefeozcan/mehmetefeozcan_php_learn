@@ -43,8 +43,8 @@ $departmentList = [
                     <label for="departmant" class="form-label">Bölüm</label>
                     <select name="departmant" id="departmant" aria-label="Bölüm seçiniz" class="form-select" required>
                         <option value="">Bölüm seçiniz</option>
-                        <?php foreach ($departmentList as $department): ?>
-                            <option value="<?= $department ?>"><?= $department ?></option>
+                        <?php foreach ($departmentList as $i): ?>
+                            <option value="<?= $i ?>"><?= $i ?></option>
                         <?php endforeach ?>
                     </select>
                 </div>

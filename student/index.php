@@ -43,22 +43,22 @@ $tableItems = getStudents();
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($tableItems as $item): ?>
+                <?php foreach ($tableItems as $i): ?>
                     <tr>
-                        <td scope="row" class="align-middle text-start">#<?= htmlspecialchars($item['id']) ?></td>
-                        <td scope="row" class="align-middle text-start"><?= htmlspecialchars($item['schoolNo']) ?></td>
-                        <td scope="row" class="align-middle text-start"><?= htmlspecialchars($item['name']) ?></td>
-                        <td scope="row" class="align-middle text-start"><?= htmlspecialchars($item['surname']) ?></td>
-                        <td scope="row" class="align-middle text-start"><?= htmlspecialchars($item['departmant']) ?></td>
+                        <td scope="row" class="align-middle text-start">#<?= htmlspecialchars($i['id']) ?></td>
+                        <td scope="row" class="align-middle text-start"><?= htmlspecialchars($i['schoolNo']) ?></td>
+                        <td scope="row" class="align-middle text-start"><?= htmlspecialchars($i['name']) ?></td>
+                        <td scope="row" class="align-middle text-start"><?= htmlspecialchars($i['surname']) ?></td>
+                        <td scope="row" class="align-middle text-start"><?= htmlspecialchars($i['departmant']) ?></td>
                         <td scope="row" class="align-middle text-start">
-                            <?= htmlspecialchars($item['phone']) ?>
+                            <?= htmlspecialchars($i['phone']) ?>
                         </td>
-                        <td scope="row" class="align-middle text-start"><?= htmlspecialchars($item['email']) ?></td>
+                        <td scope="row" class="align-middle text-start"><?= htmlspecialchars($i['email']) ?></td>
                         <td scope="row" class="align-middle text-start row gap-2">
                             <form action="store.php" method="post" class="col p-0"
                                 onsubmit="return confirm('Bu öğrenciyi silmek istediğinize emin misiniz?');">
                                 <input type="hidden" name="action" value="delete">
-                                <input type="hidden" name="id" value="<?= htmlspecialchars($item['id']) ?>">
+                                <input type="hidden" name="id" value="<?= htmlspecialchars($i['id']) ?>">
                                 <button type="submit" class="btn btn-danger btn-sm">Sil</button>
 
                             </form>

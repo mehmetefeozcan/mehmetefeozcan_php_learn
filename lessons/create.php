@@ -87,9 +87,9 @@ $durationList = [
                 <select class="form-select" aria-label="Öğretim üyesi seçiniz" id="lessonStaff" name="lessonStaff"
                     required>
                     <option value="">Öğretim üyesi seçiniz</option>
-                    <?php foreach ($academicStaffList as $staff): ?>
-                        <option value="<?= $staff['name'] ?>">
-                            <?= $staff['name'] ?>
+                    <?php foreach ($academicStaffList as $i): ?>
+                        <option value="<?= $i['name'] ?>">
+                            <?= $i['name'] ?>
                         </option>
                     <?php endforeach ?>
                 </select>
@@ -100,9 +100,9 @@ $durationList = [
                     <label for="classDay" class="form-label">Ders Günü</label>
                     <select class="form-select" aria-label="Ders günü seçiniz" id="classDay" name="classDay" required>
                         <option value="">Ders günü seçiniz</option>
-                        <?php foreach ($dayList as $day): ?>
-                            <option value="<?= $day['name'] ?>">
-                                <?= $day['name'] ?>
+                        <?php foreach ($dayList as $i): ?>
+                            <option value="<?= $i['name'] ?>">
+                                <?= $i['name'] ?>
                             </option>
                         <?php endforeach ?>
                     </select>
@@ -112,9 +112,9 @@ $durationList = [
                     <select class="form-select" aria-label="Dersin başlangıç saatini seçiniz" id="classStartTime"
                         name="classStartTime" required>
                         <option value="">Saat seçiniz</option>
-                        <?php foreach ($timeList as $time): ?>
-                            <option value="<?= $time ?>">
-                                <?= $time ?>
+                        <?php foreach ($timeList as $i): ?>
+                            <option value="<?= $i ?>">
+                                <?= $i ?>
                             </option>
                         <?php endforeach ?>
 
@@ -125,9 +125,9 @@ $durationList = [
                     <select class="form-select" aria-label="Ders süresi seçiniz" id="classDuration" name="classDuration"
                         required>
                         <option value="">Saat seçiniz</option>
-                        <?php foreach ($durationList as $duration): ?>
-                            <option value="<?= $duration ?>">
-                                <?= $duration ?> dk
+                        <?php foreach ($durationList as $i): ?>
+                            <option value="<?= $i ?>">
+                                <?= $i ?> dk
                             </option>
                         <?php endforeach ?>
                     </select>

@@ -41,28 +41,28 @@ $tableItems = getAcademicStaff();
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($tableItems as $item): ?>
+                <?php foreach ($tableItems as $i): ?>
                     <tr>
                         <td scope="row" class="align-middle text-start">#
-                            <?= htmlspecialchars($item['id']) ?>
+                            <?= htmlspecialchars($i['id']) ?>
                         </td>
                         <td scope="row" class="align-middle text-start">
-                            <?= htmlspecialchars($item['registirationNo']) ?>
+                            <?= htmlspecialchars($i['registirationNo']) ?>
                         </td>
                         <td scope="row" class="align-middle text-start">
-                            <?= htmlspecialchars($item['name']) ?>
+                            <?= htmlspecialchars($i['name']) ?>
                         </td>
                         <td scope="row" class="align-middle text-start">
-                            <?= htmlspecialchars($item['surname']) ?>
+                            <?= htmlspecialchars($i['surname']) ?>
                         </td>
                         <td scope="row" class="align-middle text-start">
-                            <?= htmlspecialchars($item['email']) ?>
+                            <?= htmlspecialchars($i['email']) ?>
                         </td>
                         <td scope="row" class="align-middle text-start row gap-2">
                             <form action="store.php" method="POST" class="col p-0"
                                 onsubmit="return confirm('Bu öğretim elemanını silmek istediğinize emin misiniz?');">
                                 <input type="hidden" name="action" value="delete">
-                                <input type="hidden" name="id" value="<?= htmlspecialchars($item['id']) ?>">
+                                <input type="hidden" name="id" value="<?= htmlspecialchars($i['id']) ?>">
                                 <button type="submit" class="btn btn-danger btn-sm w-100">Sil</button>
                             </form>
                         </td>
