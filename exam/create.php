@@ -1,6 +1,6 @@
 <?php
 include_once __DIR__ . "/store.php";
-include_once dirname(__DIR__) . "/lessons/store.php";
+include_once dirname(__DIR__) . "/lesson/store.php";
 include_once dirname(__DIR__) . "/student/store.php";
 
 $pageTitle = "Sınav Sonuçları";

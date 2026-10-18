@@ -2,7 +2,7 @@
 require_once __DIR__ . "/store.php";
 
 $pageTitle = "Dersler";
-$pagePath = "/lessons/index.php";
+$pagePath = "/lesson/index.php";
 
 $tableItems = getLessons();
 ?>

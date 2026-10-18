@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Yeni Ders Oluştur";
-$pagePath = "/lessons/index.php";
+$pagePath = "/lesson/index.php";
 
 $academicStaffList = [
     ["id" => 1, "name" => "Prof. Dr. İrfan Şimşek"],
