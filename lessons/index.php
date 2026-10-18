@@ -27,7 +27,7 @@ $tableItems = getLessons();
                 </h3>
             </span>
             <div class="col-auto">
-                <a class="btn btn-primary btn-sm" href="create.php" role="button">Yeni Ders Oluştur</a>
+                <a class="btn btn-primary btn-sm rounded-2" href="create.php" role="button">Yeni Ders Oluştur</a>
             </div>
         </div>
         <table class="table table-striped table-hover mt-4">
@@ -68,7 +68,7 @@ $tableItems = getLessons();
                                 onsubmit="return confirm('Bu dersi silmek istediğinize emin misiniz?');">
                                 <input type="hidden" name="action" value="delete">
                                 <input type="hidden" name="id" value="<?= htmlspecialchars($item['id']) ?>">
-                                <button type="submit" class="btn btn-danger btn-sm w-100">sil</button>
+                                <button type="submit" class="btn btn-danger btn-sm w-100">Sil</button>
                             </form>
                         </td>
                     </tr>
