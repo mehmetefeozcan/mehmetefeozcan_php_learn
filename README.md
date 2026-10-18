@@ -158,11 +158,11 @@ Modüllerin `create.php` sayfaları da `$pagePath` olarak **kendi listeleme sayf
 
 Dört modül (`lesson`, `student`, `academic_staff`, `exam`) aynı üç dosyayla çalışır:
 
-| Dosya | Görevi |
-|---|---|
-| `index.php` | Verileri `store.php`'den alır ve tablo olarak gösterir. Her satırda "Sil" formu bulunur. |
-| `create.php` | Ekleme formunu gösterir. Form `store.php`'ye `POST` gönderir. |
-| `store.php` | Oturumdaki veriyi tutar; `POST` ile kayıt ekler, `action=delete` ile kayıt siler. |
+| Dosya        | Görevi                                                                                   |
+| ------------ | ---------------------------------------------------------------------------------------- |
+| `index.php`  | Verileri `store.php`'den alır ve tablo olarak gösterir. Her satırda "Sil" formu bulunur. |
+| `create.php` | Ekleme formunu gösterir. Form `store.php`'ye `POST` gönderir.                            |
+| `store.php`  | Oturumdaki veriyi tutar; `POST` ile kayıt ekler, `action=delete` ile kayıt siler.        |
 
 ### 5.1 Veri akışı
 
@@ -261,12 +261,12 @@ Bu bağlantının bir sonucu var: sınav kaydı ders ve öğrenciyi **id ile de�
 
 Bazı seçenek listeleri veritabanı yerine doğrudan `create.php` içinde dizi olarak tanımlıdır:
 
-| Dosya | Liste | Not |
-|---|---|---|
-| `lesson/create.php` | `$academicStaffList` | Öğretim elemanı modülündeki kayıtlardan **bağımsızdır** |
-| `lesson/create.php` | `$dayList`, `$timeList`, `$durationList` | Sabit değerler |
-| `student/create.php` | `$departmentList` | Sabit değerler |
-| `exam/create.php` | `$examTypes` | Sabit değerler |
+| Dosya                | Liste                                    | Not                                                     |
+| -------------------- | ---------------------------------------- | ------------------------------------------------------- |
+| `lesson/create.php`  | `$academicStaffList`                     | Öğretim elemanı modülündeki kayıtlardan **bağımsızdır** |
+| `lesson/create.php`  | `$dayList`, `$timeList`, `$durationList` | Sabit değerler                                          |
+| `student/create.php` | `$departmentList`                        | Sabit değerler                                          |
+| `exam/create.php`    | `$examTypes`                             | Sabit değerler                                          |
 
 Yeni bir öğretim elemanı eklediğinizde `lesson/create.php` içindeki listeye ayrıca eklemeniz gerekir.
 
@@ -472,15 +472,15 @@ Giriş sistemi henüz yoktur. Sayfayı açabilen herkes kayıt ekleyip silebilir
 
 ## 10. Sık Karşılaşılan Hatalar
 
-| Belirti | Olası neden | Çözüm |
-|---|---|---|
-| Sayfa boş ya da stilsiz görünüyor | CSS yolu yanlış | `PUBLIC_CSS_URL` ve `BASE_URL` değerlerini kontrol edin |
-| `Failed to open stream` hatası | `include` yolu yanlış | `__DIR__` ile yolu yeniden yazın |
-| `Cannot modify header information` | `header()` çağrısından önce çıktı var | Dosyanın başında boşluk ya da HTML olmadığını kontrol edin |
-| Menüde link vurgulanmıyor | `$pagePath` ile `route` eşleşmiyor | İkisinin de başında `/` olduğundan ve birebir aynı olduğundan emin olun |
-| Kayıt eklenmiyor, form geri dönüyor | `name` attribute'u `store.php` içindeki `$_POST` anahtarıyla uyuşmuyor | Form alanlarının `name` değerlerini `store.php` ile karşılaştırın |
-| Sınav formunda ders/öğrenci görünmüyor | `store.php` dahil edilmemiş ya da oturumda kayıt yok | `exam/create.php` içindeki `include_once` satırlarını kontrol edin |
-| Modal içeriği boş açılıyor | `data-bs-*` değeri eksik ya da ID eşleşmiyor | `data-bs-target` ile modalın `id`'sini karşılaştırın |
+| Belirti                                | Olası neden                                                            | Çözüm                                                                   |
+| -------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Sayfa boş ya da stilsiz görünüyor      | CSS yolu yanlış                                                        | `PUBLIC_CSS_URL` ve `BASE_URL` değerlerini kontrol edin                 |
+| `Failed to open stream` hatası         | `include` yolu yanlış                                                  | `__DIR__` ile yolu yeniden yazın                                        |
+| `Cannot modify header information`     | `header()` çağrısından önce çıktı var                                  | Dosyanın başında boşluk ya da HTML olmadığını kontrol edin              |
+| Menüde link vurgulanmıyor              | `$pagePath` ile `route` eşleşmiyor                                     | İkisinin de başında `/` olduğundan ve birebir aynı olduğundan emin olun |
+| Kayıt eklenmiyor, form geri dönüyor    | `name` attribute'u `store.php` içindeki `$_POST` anahtarıyla uyuşmuyor | Form alanlarının `name` değerlerini `store.php` ile karşılaştırın       |
+| Sınav formunda ders/öğrenci görünmüyor | `store.php` dahil edilmemiş ya da oturumda kayıt yok                   | `exam/create.php` içindeki `include_once` satırlarını kontrol edin      |
+| Modal içeriği boş açılıyor             | `data-bs-*` değeri eksik ya da ID eşleşmiyor                           | `data-bs-target` ile modalın `id`'sini karşılaştırın                    |
 
 ---
 
