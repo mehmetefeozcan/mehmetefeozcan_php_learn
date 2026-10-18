@@ -49,7 +49,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'delet
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $ids = $ids ? array_column($_SESSION['lessons'], 'id') : [];
+    $ids = array_column($_SESSION['lessons'] ?? [], 'id');
+
+    $startTime = trim($_POST['classStartTime'] ?? '');
+    $duration = (int) ($_POST['classDuration'] ?? 0);
+    $endTime = $startTime ? date('H:i', strtotime($startTime) + $duration * 60) : '';
 
     $_SESSION['lessons'][] = [
         'id' => $ids ? max($ids) + 1 : 1,
@@ -58,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'link' => trim($_POST['lessonDetailLink'] ?? ''),
         'academicStaff' => trim($_POST['lessonStaff'] ?? ''),
         'classDay' => trim($_POST['classDay'] ?? ''),
-        'classTime' => trim($_POST['classStartTime'] ?? ''),
+        'classTime' => $startTime ? "$startTime-$endTime" : '',
         'detail' => trim($_POST['lessonDetail'] ?? ''),
         'credit' => (int) ($_POST['lessonCredit'] ?? 0),
     ];

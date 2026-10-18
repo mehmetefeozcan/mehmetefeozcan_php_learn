@@ -27,10 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'delet
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $ids = $ids ? array_column($_SESSION['students'], 'id') : [];
-
-    error_log($_POST['departmant']);
-    error_log($_POST['phone']);
+    $ids = array_column($_SESSION['students'] ?? [], 'id');
 
     $_SESSION['students'][] = [
         'id' => $ids ? max($ids) + 1 : 1,

@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'delet
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $ids = $ids ? array_column($_SESSION['academicStaffs'], 'id') : [];
+    $ids = array_column($_SESSION['academicStaffs'] ?? [], 'id');
 
     $_SESSION['academicStaffs'][] = [
         "id" => $ids ? max($ids) + 1 : 1,

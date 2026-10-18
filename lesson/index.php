@@ -48,7 +48,10 @@ $tableItems = getLessons();
                     <tr>
                         <td scope="row" class="align-middle text-start">#<?= htmlspecialchars($i['id']) ?> </td>
                         <td scope="row" class="align-middle text-start"><?= htmlspecialchars($i['code']) ?> </td>
-                        <td scope="row" class="align-middle text-start"><?= htmlspecialchars($i['title']) ?> </td>
+                        <td scope="row" class="align-middle text-start"><a href="<?= $i['link'] ?>" target="_blank"
+                                class="text-black">
+                                <?= htmlspecialchars($i['title']) ?>
+                            </a></td>
                         <td scope="row" class="align-middle text-start"><?= htmlspecialchars($i['academicStaff']) ?>
                         </td>
                         <td scope="row" class="align-middle text-start"><?= htmlspecialchars($i['credit']) ?> </td>
@@ -60,7 +63,8 @@ $tableItems = getLessons();
                                 data-bs-staff="<?= htmlspecialchars($i['academicStaff']) ?>"
                                 data-bs-day="<?= htmlspecialchars($i['classDay']) ?>"
                                 data-bs-time="<?= htmlspecialchars($i['classTime']) ?>"
-                                data-bs-detail="<?= htmlspecialchars($i['detail']) ?>">
+                                data-bs-detail="<?= htmlspecialchars($i['detail']) ?>"
+                                data-bs-link="<?= htmlspecialchars($i['link']) ?>">
                                 Detaylar
                             </button>
 
@@ -92,12 +96,17 @@ $tableItems = getLessons();
         var day = button.getAttribute('data-bs-day');
         var time = button.getAttribute('data-bs-time');
         var detail = button.getAttribute('data-bs-detail');
+        var link = button.getAttribute('data-bs-link');
 
         document.getElementById('modalTitle').textContent = title;
         document.getElementById('modalStaff').textContent = staff;
         document.getElementById('modalDay').textContent = day;
         document.getElementById('modalTime').textContent = time;
         document.getElementById('modalDetail').textContent = detail;
+        document.getElementById('modalLink').href = link;
+
+        console.log(document.getElementById('modalLink'));
+
     });
 </script>
 
