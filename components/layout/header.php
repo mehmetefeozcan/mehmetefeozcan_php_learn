@@ -3,6 +3,7 @@ $menuList = [
     ["id" => 1, "name" => "Ana Sayfa", "route" => "/index.php"],
     ["id" => 2, "name" => "Dersler", "route" => "/lessons/index.php"],
     ["id" => 3, "name" => "Öğrenci", "route" => "/student/index.php"],
+    ["id" => 3, "name" => "Öğretim Elemanı", "route" => "/academic_staff/index.php"],
 ];
 
 $pagePath ??= "";
