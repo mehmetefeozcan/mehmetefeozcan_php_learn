@@ -27,7 +27,7 @@ http://localhost/mehmetefeozcan/
 mehmetefeozcan/
 ├── index.php                          # Ana sayfa (modüllere giden kartlar)
 ├── config/
-│   ├── paths_config.php               # Sabit yollar (BASE_URL, COMPONENTS_PATH vb.)
+│   ├── paths_config.php               # Sabit yollar (BASE_PATH, COMPONENTS_PATH vb.)
 │   ├── head_config.php                # <head> içeriği: meta, başlık, CSS
 │   └── script_config.php              # Bootstrap JavaScript dosyası
 ├── components/
@@ -109,7 +109,7 @@ Proje içindeki tüm yollar tek dosyada tanımlıdır. Bir yolu değiştirmek ge
 
 ```php
 define("ROOT_PATH", dirname(__DIR__));                        // Proje klasörünün fiziksel yolu
-define("BASE_URL", "/mehmetefeozcan");                        // Tarayıcıdaki kök adres
+define("BASE_PATH", "/mehmetefeozcan");                        // Tarayıcıdaki kök adres
 define("PUBLIC_CSS_URL", PUBLIC_FOLDER_URL . "/css");         // CSS klasörü
 define("PUBLIC_IMAGES_URL", PUBLIC_FOLDER_URL . "/img");      // Görsel klasörü
 define("COMPONENTS_PATH", ROOT_PATH . "/components");         // Bileşen klasörünün fiziksel yolu
@@ -474,7 +474,7 @@ Giriş sistemi henüz yoktur. Sayfayı açabilen herkes kayıt ekleyip silebilir
 
 | Belirti                                | Olası neden                                                            | Çözüm                                                                   |
 | -------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| Sayfa boş ya da stilsiz görünüyor      | CSS yolu yanlış                                                        | `PUBLIC_CSS_URL` ve `BASE_URL` değerlerini kontrol edin                 |
+| Sayfa boş ya da stilsiz görünüyor      | CSS yolu yanlış                                                        | `PUBLIC_CSS_URL` ve `BASE_PATH` değerlerini kontrol edin                |
 | `Failed to open stream` hatası         | `include` yolu yanlış                                                  | `__DIR__` ile yolu yeniden yazın                                        |
 | `Cannot modify header information`     | `header()` çağrısından önce çıktı var                                  | Dosyanın başında boşluk ya da HTML olmadığını kontrol edin              |
 | Menüde link vurgulanmıyor              | `$pagePath` ile `route` eşleşmiyor                                     | İkisinin de başında `/` olduğundan ve birebir aynı olduğundan emin olun |

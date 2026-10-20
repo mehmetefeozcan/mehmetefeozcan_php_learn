@@ -18,23 +18,24 @@ $pagePath = "/index.php";
 
         <div class="container rounded-4 p-4 bg-light ">
             <h4>Dersler</h4>
-            <p>Dersleri görüntülemek ve yönetmek için <a href="<?= BASE_URL ?>/lesson/index.php">tıklayınız.</a></p>
+            <p>Dersleri görüntülemek ve yönetmek için <a href="<?= BASE_PATH ?>/lesson/index.php">tıklayınız.</a></p>
         </div>
         <div class="container rounded-4 p-4 bg-light ">
             <h4>Öğrenci</h4>
-            <p>Öğrencileri görüntülemek ve yönetmek için <a href="<?= BASE_URL ?>/student/index.php">tıklayınız.</a></p>
+            <p>Öğrencileri görüntülemek ve yönetmek için <a href="<?= BASE_PATH ?>/student/index.php">tıklayınız.</a>
+            </p>
         </div>
         <div class="container rounded-4 p-4 bg-light ">
             <h4>Öğretim Elemanı</h4>
-            <p>Öğretim elemanlarını ve yönetmek için <a href="<?= BASE_URL ?>/academic_staff/index.php">tıklayınız.</a>
+            <p>Öğretim elemanlarını ve yönetmek için <a href="<?= BASE_PATH ?>/academic_staff/index.php">tıklayınız.</a>
             </p>
         </div>
         <div class="container rounded-4 p-4 bg-light ">
             <h4>Sınavlar</h4>
-            <p>Sınavları görüntülemek ve yönetmek için <a href="<?= BASE_URL ?>/exam/index.php">tıklayınız.</a></p>
+            <p>Sınavları görüntülemek ve yönetmek için <a href="<?= BASE_PATH ?>/exam/index.php">tıklayınız.</a></p>
         </div>
     </div>
-<?php include_once "./config/script_config.php" ?>
+    <?php include_once "./config/script_config.php" ?>
 </body>
 
 </html>

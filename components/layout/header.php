@@ -23,7 +23,7 @@ $pagePath ??= "";
                 <?php foreach ($menuList as $i): ?>
                     <li class="nav-item ">
                         <a class="nav-link <?= $pagePath == $i['route'] ? 'active' : '' ?>"
-                            href="<?= BASE_URL . $i['route']; ?>">
+                            href="<?= BASE_PATH . $i['route']; ?>">
                             <?= $i['name']; ?>
                         </a>
                     </li>
