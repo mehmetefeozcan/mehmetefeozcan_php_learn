@@ -35,8 +35,12 @@ $tableItems = getExams();
                     <th scope="col">#ID</th>
                     <th scope="col">Ders</th>
                     <th scope="col">Öğrenci</th>
-                    <th scope="col">Sınav Türü</th>
-                    <th scope="col">Not</th>
+                    <th scope="col">Vize</th>
+                    <th scope="col">Final</th>
+                    <th scope="col">Değerlendirme</th>
+                    <th scope="col">Başarı Notu</th>
+                    <th scope="col">Harf Notu</th>
+                    <th scope="col">Durum</th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -53,10 +57,22 @@ $tableItems = getExams();
                             <?= htmlspecialchars($i['student']) ?>
                         </td>
                         <td scope="row" class="align-middle text-start">
-                            <?= htmlspecialchars($i['examType']) ?>
+                            <?= htmlspecialchars($i['viseNote']) ?>
                         </td>
                         <td scope="row" class="align-middle text-start">
-                            <?= htmlspecialchars($i['note']) ?>
+                            <?= htmlspecialchars($i['finalNote']) ?>
+                        </td>
+                        <td scope="row" class="align-middle text-start">
+                            <?= htmlspecialchars($i['reviewNote']) ?>
+                        </td>
+                        <td scope="row" class="align-middle text-start">
+                            <?= htmlspecialchars($i['successNote']) ?>
+                        </td>
+                        <td scope="row" class="align-middle text-start">
+                            <?= htmlspecialchars($i['letterNote']) ?>
+                        </td>
+                        <td scope="row" class="align-middle text-start">
+                            <?= htmlspecialchars($i['status']) ?>
                         </td>
                         <td scope="row" class="align-middle text-start row gap-2">
                             <form action="store.php" method="POST" class="col p-0"
@@ -71,7 +87,7 @@ $tableItems = getExams();
             </tbody>
         </table>
     </div>
-<?php include_once '../config/script_config.php' ?>
+    <?php include_once '../config/script_config.php' ?>
 </body>
 
 </html>

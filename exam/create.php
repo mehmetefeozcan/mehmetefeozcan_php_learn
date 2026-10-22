@@ -9,8 +9,6 @@ $pagePath = "/exam/index.php";
 
 $lessons = getLessons();
 $students = getStudents();
-
-$examTypes = ["Vize", "Final", "Bütünleme", "Tek Ders", "Telafi"];
 ?>
 
 
@@ -62,19 +60,16 @@ $examTypes = ["Vize", "Final", "Bütünleme", "Tek Ders", "Telafi"];
             </div>
             <div class="row mt-4 gap-2">
                 <span class="col">
-                    <label for="examType" class="form-label">Sınav Türü</label>
-                    <select class="form-select" aria-label="Sınav türü seçiniz" id="examType" name="examType" required>
-                        <option value="">Sınav türü seçiniz</option>
-                        <?php foreach ($examTypes as $i): ?>
-                            <option value="<?= $i ?>">
-                                <?= $i ?>
-                            </option>
-                        <?php endforeach ?>
-                    </select>
+                    <label for="viseNote" class="form-label">Vize</label>
+                    <input type="number" class="form-control" id="viseNote" name="viseNote" placeholder="Vize notu" min="0" max="100" required>
                 </span>
                 <span class="col">
-                    <label for="note" class="form-label">Not</label>
-                    <input type="number" class="form-control" id="note" name="note" placeholder="Not giriniz" required>
+                    <label for="finalNote" class="form-label">Final</label>
+                    <input type="number" class="form-control" id="finalNote" name="finalNote" placeholder="Final notu" min="0" max="100" required>
+                </span>
+                <span class="col">
+                    <label for="reviewNote" class="form-label">Değerlendirme</label>
+                    <input type="number" class="form-control" id="reviewNote" name="reviewNote" placeholder="Değerlendirme notu" min="0" max="100" required>
                 </span>
             </div>
             <div class="row justify-content-end mt-4">
