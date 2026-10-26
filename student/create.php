@@ -36,8 +36,8 @@ $departmentList = [
             <div class="row mt-4 gap-2">
                 <div class="col">
                     <label for="schoolNo" class="form-label">Okul No</label>
-                    <input type="number" class="form-control" id="schoolNo" name="schoolNo"
-                        placeholder="Ders kodu giriniz" required>
+                    <input type="text" inputmode="numeric" class="form-control" id="schoolNo" name="schoolNo"
+                        placeholder="Okul no giriniz" required>
                 </div>
                 <div class="col">
                     <label for="departmant" class="form-label">Bölüm</label>

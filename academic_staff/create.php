@@ -31,8 +31,8 @@ $pagePath = "/academic_staff/index.php";
             <div class="row mt-4 gap-2">
                 <div class="col">
                     <label for="registirationNo" class="form-label">Sicil No</label>
-                    <input type="number" class="form-control" id="registirationNo" name="registirationNo"
-                        placeholder="Ders kodu giriniz" required>
+                    <input type="text" inputmode="numeric" class="form-control" id="registirationNo" name="registirationNo"
+                        placeholder="Sicil no giriniz" required>
                 </div>
                 <span class="col">
                     <label for="email" class="form-label">E-Posta</label>

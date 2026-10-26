@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $_SESSION['students'][] = [
         'id' => $ids ? max($ids) + 1 : 1,
-        'schoolNo' => trim($_POST['schoolNo'] ?? 0),
+        'schoolNo' => trim($_POST['schoolNo'] ?? ''),
         'name' => trim($_POST['name'] ?? ''),
         'surname' => trim($_POST['surname'] ?? ''),
         'departmant' => trim($_POST['departmant'] ?? ''),
