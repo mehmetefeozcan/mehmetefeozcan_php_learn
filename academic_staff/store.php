@@ -14,14 +14,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'delet
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ids = array_column($_SESSION['academicStaffs'] ?? [], 'id');
+    $maxId = $ids ? max($ids) + 1 : 1;
 
-    $_SESSION['academicStaffs'][] = [
-        "id" => $ids ? max($ids) + 1 : 1,
-        "registirationNo" => trim($_POST["registirationNo"] ?? "0000"),
-        "name" => trim($_POST["name"] ?? ""),
-        "surname" => trim($_POST["surname"] ?? ""),
-        "email" => trim($_POST["email"] ?? ""),
-    ];
+
+    $registirationNoList = $_POST['registirationNo'];
+    $nameList = $_POST['name'];
+    $surnameList = $_POST['surname'];
+    $emailList = $_POST['email'];
+
+    $count = count($registirationNoList);
+
+    for ($i = 0; $i < $count; $i++) {
+        $_SESSION['academicStaffs'][] = [
+            "id" => $maxId,
+            "registirationNo" => trim($registirationNoList[$i] ?? "0000"),
+            "name" => trim($nameList[$i] ?? ""),
+            "surname" => trim($surnameList[$i] ?? ""),
+            "email" => trim($emailList[$i] ?? ""),
+        ];
+
+        $maxId++;
+
+    }
+
 
 
 

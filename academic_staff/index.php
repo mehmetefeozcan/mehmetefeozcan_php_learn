@@ -71,7 +71,7 @@ $tableItems = getAcademicStaff();
             </tbody>
         </table>
     </div>
-<?php include_once "../config/script_config.php" ?>
+    <?php include_once "../config/script_config.php" ?>
 </body>
 
 </html>
