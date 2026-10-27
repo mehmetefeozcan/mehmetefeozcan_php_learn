@@ -3,6 +3,7 @@ $menuList = [
     ["id" => 1, "name" => "Ana Sayfa", "route" => "/index.php"],
     ["id" => 2, "name" => "Dersler", "route" => "/lesson/index.php"],
     ["id" => 3, "name" => "Öğrenci", "route" => "/student/index.php"],
+    ["id" => 4, "name" => "Öğretim Elemanı (Legacy)", "route" => "/academic_staff_legacy/index.php"],
     ["id" => 4, "name" => "Öğretim Elemanı", "route" => "/academic_staff/index.php"],
     ["id" => 5, "name" => "Sınavlar (Legacy)", "route" => "/exam_legacy/index.php"],
     ["id" => 6, "name" => "Sınavlar", "route" => "/exam/index.php"],
